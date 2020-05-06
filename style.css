@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+*{
+	font-family: 'Poppins', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+body{
+	
+	font-size:18px;
+	background: url("healt.jpg");
+	background-size: cover;	
+}
+
+									/* format menu */
+ul {
+padding-top: 5px;
+float: right;
+width: 100%;
+list-style: none;
+}
+
+li a {
+display: block;
+float: right;
+text-align: center;
+font-size: 1.2em;
+width: 140px;
+text-decoration: none;
+color: black;
+background-color: white;
+padding: 10px 15px;
+margin: 0px 50px 50px 0px;
+border: 1.4px solid black;
+border-radius: 3px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+li a:hover {
+color: black;
+background: gray;
+opacity: 0.3;
+border: 1px solid black;
+}
+
+
+article{
+	height: 80vh;
+	text-align: center;
+	
+}
+header{
+	background-color: #eee;
+}
+									/* format całego formularza kalkulatora  */
+.form{
+	padding-top: 350px;
+	width: 80%;
+	margin: 0 auto;
+	
+}
+form input, form select{
+
+	padding: 10px;
+	max-width: 200px;
+	margin: 5px 5px 0 10px;
+}
+
+form button{
+	margin-top: 10px;
+	padding: 10px 15px;
+	border: 2px ;
+	transition: .3s;
+	cursor: pointer;
+	background-image: linear-gradient(to right, #FFC371 0%, #FF5F6D 99%, #FF5F6D 100%);
+}
+
+form button:hover{
+	background-color: gray;
+	color: white;
+}
+.result{
+	margin: 0 auto;
+	max-width: 500px;
+	font-size: 25px;
+	margin-top: 50px;
+}
+.result span{
+	color: red;
+}
+
+									/* format pol kalkulatora  */
+.format
+{
+	position:relative; left:7px;
+}
+
+.format1
+{
+	position:relative; left:13px;
+}
+.format2
+{
+	position:relative; right:2px;
+}
+.format3
+{
+	position:relative; right:13px;
+}
+.login-box1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	width: 600px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 11vh 5vh 7vh;
+	border-radius: 10px;
+	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.los
+{
+		outline-color: orangered;
+}
+
+									/* format podstrony logowanie */
+
+.login-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	width: 500px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 11vh 5vh 7vh;
+	border-radius: 10px;
+	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+}
+
+h2 {
+	font-size: 2rem;
+	margin: 0 0 0.9vh;
+	background: linear-gradient(to right, #FFC371 0%, #FF5F6D 99%, #FF5F6D 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+
+}
+
+p {
+	margin: 0 0 3vh;
+	font-size: 0.8rem;
+}
+
+.form--input-box{
+	position: relative;
+	text-align: left;
+	margin: 0 0 3vh;
+}
+
+
+.form1 .form--input-box input {
+	width: 100%;
+	border: none;
+	background-color: transparent;
+	font-size: 1.2rem;
+	line-height: 1.9;
+	outline: transparent;
+	margin-top: 2vh;
+
+}
+
+.form1 .form--input-box label {
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+
+.form1 .form--input-box::after, .form1 .form--input-box::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: rgba(0, 0, 0, 0.1);
+  } 
+
+.form1 .form--input-box::before{
+	background-image: linear-gradient(to right, #FFC371 0%, #FF5F6D 99%, #FF5F6D 100%);
+}
+
+.form--options{
+	display: grid;
+	grid-template-columns: 1fr 1.5fr;
+	font-size: 0.8rem;
+	text-align: left;
+}
+
+.form1 .form--options > div:last-of-type {
+	text-align: right;
+  }
+
+a {
+	 text-decoration: none;
+	 font-weight: 600;
+	 background: linear-gradient(to right, #FF5F6D 0%, #FFC371 99%, #FFC371 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+  }
+
+  .button{
+	  border: none;
+	  font-size: 1.2rem;
+	  padding: 0 6vh;
+	  box-sizing: border-box;
+	  line-height: 2;
+	  margin-top: 5vh;
+	  outline: transparent;
+	  color: white;
+	  background-image: linear-gradient(to right, #FFC371 0%, #FF5F6D 99%, #FF5F6D 100%);
+	  border-radius: 30px;
+	  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+				 			 /*Format pól rejestracji */
+				  
+.login-box2 
+{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: white;
+width: 500px;
+text-align: center;
+box-sizing: border-box;
+padding: 20px 40px 15px;
+border-radius: 10px;
+box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.errorList{
+	  color: red;
+	  margin-top: 10px;
+	  font-weight: 800;
+	  font-size: 15px;
+	  text-align: left;
+  }
+
