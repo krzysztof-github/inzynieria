@@ -14,10 +14,10 @@
 		<header class="NAGLOWEK">
 			<nav id="MENU">
 				<ul>
-					<li><a href="produkty.html">Produkty</a></li>
-					<li><a href="kalkulator.html">Kalkulator</a></li>
-					<li><a href="logowanie.html">Logowanie</a></li>
-					<li><a href="przyklad.html">BeFit</a></li>
+					<li><a href="produkty.php">Produkty</a></li>
+					<li><a href="kalkulator.php">Kalkulator</a></li>
+					<li><a href="logowanie.php">Logowanie</a></li>
+					<li><a href="przyklad.php">BeFit</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -28,7 +28,7 @@
 				<p>Zaloguj się do swojego konta</p>
 				<form action="#" class="form1">
 					<div class="form--input-box">
-						<label for="login">Login:</label>
+						<label for="login">E-mail:</label>
 						<input type="text" name="login" id="login" required>
 					</div>
 					<div class="form--input-box">
@@ -36,12 +36,12 @@
 						<input type="password" name="password" id="password" required>
 					</div>
 
-					<div class="form--options">
+					<div class="form--options">  
 						<div>
-							<a href="/">Zapomniałeś hasła?</a>
+							<a href="haslo.php">Zapomniałeś hasła?</a>
 						</div>
 						<div>
-							Nie masz konta? <a href="rejestracja.html" target="_self">Zarejestruj się</a>
+							Nie masz konta? <a href="rejestracja.php" target="_self">Zarejestruj się</a>
 						</div>
 					</div>
 					<button type="submit" class="button">Zaloguj się</button>
