@@ -9,6 +9,7 @@
 </head>
 
 <?php
+$conn = new mysqli("localhost","root","","test");
 session_start();
 
 	if(isset($_POST["login"]))
@@ -30,25 +31,20 @@ session_start();
 		{
 			$wszystko_OK=false;
 			$_SESSION['e_haslo'] = "Hasło musi posiadać od 8 do 20 znaków!";
-		}
-		
-		if($password!=$password2)
-		{
-			$wszystko_OK=false;
-			$_SESSION['e_haslo'] = "Hasła różnią się!";
-		}
 
-		$conn = new mysqli("localhost","root","","test");
-		
-		$odp = $conn->query("INSERT INTO dane(login, password, password2) VALUES ('$login', '$password', '$password2')");
-		
-		if($odp)
-		{
-			echo "Dodano użytkownika!";
+				if($password!=$password2)
+			{
+				$wszystko_OK=false;
+				$_SESSION['e_haslo'] = "Hasła różnią się!";
+			}
+			echo 'blad';
 		}
+		
+		
 		else
 		{
-			echo "Błąd";
+			$odp = $conn->query("INSERT INTO dane(login, password, password2) VALUES ('$login', '$password', '$password2')");
+			echo "dodano";
 		}
 		$conn->close();
 		

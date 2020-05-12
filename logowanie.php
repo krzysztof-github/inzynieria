@@ -9,6 +9,34 @@
 
 </head>
 
+ <?php
+ session_start();
+
+		 if(isset($_POST["login"]))
+		 {
+			$conn = new mysqli("localhost","root","","test");
+			
+			$login = $_POST['login'];
+			$password = $_POST['password'];
+			$sql="select * from test where login ='$login' and password='$password'";
+			$result = $mysqli->query($sql);
+			$rows= $mysli_num_rows($result);
+			if($rows==1)
+			{session_start();
+				$_SESSION['login']=$login;
+				$_SESSION['password']=$password;
+					$login_info =$mysli_fetch_array($result);
+					$_SESSION['login']=$login_info['login'];
+			}
+
+			else
+			{
+				echo 'not allowed';
+			}
+
+		 }
+		 ?>
+
 <body>
 	<div id="top">
 		<header class="NAGLOWEK">
