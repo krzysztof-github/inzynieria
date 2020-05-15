@@ -9,7 +9,7 @@
 </head>
 
 <?php
-$conn = new mysqli("localhost","root","","test");
+
 session_start();
 
 	if(isset($_POST["login"]))
@@ -24,6 +24,13 @@ session_start();
 			$_SESSION['e_login']="Nick musi posiadać od 3 do 20 znaków!";
 		}
 		
+		if (ctype_alnum($login)==false)
+		{
+			$wszystko_OK=false;
+			$_SESSION['e_login']="Nick może składać się tylko z liter i cyfr (bez polskich znaków)";
+		}
+		
+		
 		$password = $_POST['password'];
 		$password2 = $_POST['password2'];
 		
@@ -31,23 +38,31 @@ session_start();
 		{
 			$wszystko_OK=false;
 			$_SESSION['e_haslo'] = "Hasło musi posiadać od 8 do 20 znaków!";
-
-				if($password!=$password2)
-			{
-				$wszystko_OK=false;
-				$_SESSION['e_haslo'] = "Hasła różnią się!";
-			}
-			echo 'blad';
 		}
 		
+		if($password!=$password2)
+		{
+			$wszystko_OK=false;
+			$_SESSION['e_haslo'] = "Hasła różnią się!";
+		}
 		
+		$conn = new mysqli("localhost","root","","uzytkownik");
+		
+		$odp = $conn->query("INSERT INTO dane(login, password, password2) VALUES ('$login', '$password', '$password2')");
+		
+		if($odp)
+		{
+			echo "Dodano użytkownika!";
+		}
 		else
 		{
-			$odp = $conn->query("INSERT INTO dane(login, password, password2) VALUES ('$login', '$password', '$password2')");
-			echo "dodano";
+			echo "Błąd";
 		}
+		
+
 		$conn->close();
 		
+
 	}
 
 
@@ -59,10 +74,10 @@ session_start();
 		<header class="NAGLOWEK">
 			<nav id="MENU">
 				<ul>
-				<li><a href="produkty.php">Produkty</a></li>
-					<li><a href="kalkulator.php">Kalkulator</a></li>
-					<li><a href="logowanie.php">Logowanie</a></li>
-					<li><a href="przyklad.php">BeFit</a></li>
+					<li><a href="produkty.html">Produkty</a></li>
+					<li><a href="kalkulator.html">Kalkulator</a></li>
+					<li><a href="logowanie.html">Logowanie</a></li>
+					<li><a href="przyklad.html">BeFit</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -72,11 +87,11 @@ session_start();
 			<div class="login-box2">
 				<h2>Rejestracja</h2>
 				<div id="error"></div>
-				<form method="POST" action="rejestracja.php">
+				<form method="POST" action="zap.php">
 				
 				<form action="#" class="form1">
 					<div class="form--input-box">
-						<label for="login">Podaj e-mail:</label>
+						<label for="login">Podaj login:</label>
 						<input type="text" name="login" id="login">
 						<?php
 						

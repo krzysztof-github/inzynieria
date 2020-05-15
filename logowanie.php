@@ -1,3 +1,8 @@
+<?php
+
+	session_start();
+
+?>
 <!doctype html>
 <html>
 
@@ -9,39 +14,12 @@
 
 </head>
 
- <?php
- session_start();
-
-		 if(isset($_POST["login"]))
-		 {
-			$conn = new mysqli("localhost","root","","test");
-			
-			$login = $_POST['login'];
-			$password = $_POST['password'];
-			$sql="select * from test where login ='$login' and password='$password'";
-			$result = $mysqli->query($sql);
-			$rows= $mysli_num_rows($result);
-			if($rows==1)
-			{session_start();
-				$_SESSION['login']=$login;
-				$_SESSION['password']=$password;
-					$login_info =$mysli_fetch_array($result);
-					$_SESSION['login']=$login_info['login'];
-			}
-
-			else
-			{
-				echo 'not allowed';
-			}
-
-		 }
-		 ?>
-
 <body>
 	<div id="top">
 		<header class="NAGLOWEK">
 			<nav id="MENU">
 				<ul>
+					<li><a href="logout.php">Wyloguj</a></li>
 					<li><a href="produkty.php">Produkty</a></li>
 					<li><a href="kalkulator.php">Kalkulator</a></li>
 					<li><a href="logowanie.php">Logowanie</a></li>
@@ -54,6 +32,7 @@
 			<div class="login-box">
 				<h2>Witamy</h2>
 				<p>Zaloguj się do swojego konta</p>
+				<form action="zaloguj.php" method="post">
 				<form action="#" class="form1">
 					<div class="form--input-box">
 						<label for="login">E-mail:</label>
@@ -74,6 +53,10 @@
 					</div>
 					<button type="submit" class="button">Zaloguj się</button>
 				</form>
+				</form>
+				<?php
+					if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+				?>
 			</div>
 
 		</article>
