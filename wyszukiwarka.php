@@ -12,7 +12,7 @@ if(isset($_POST['search']))
 function filterTable($query)
 { 
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    $connect=mysqli_connect("localhost","root","","csv_db 6");
+    $connect=mysqli_connect("localhost","root","","produkty");
     $filter_Result=mysqli_query($connect,$query);
     return $filter_Result;
 }
@@ -32,10 +32,10 @@ function filterTable($query)
 		<header class="NAGLOWEK">
 			<nav id="MENU">
 				<ul>
-					<li><a href="produkty.html">Produkty</a></li>
-					<li><a href="kalkulator.html">Kalkulator</a></li>
-					<li><a href="logowanie.html">Logowanie</a></li>
-					<li><a href="przyklad.html">BeFit</a></li>
+                    <li><a href="wyszukiwarka.php">Produkty</a></li>
+					<li><a href="kalkulator.php">Kalkulator</a></li>
+					<li><a href="logowanie.php">Logowanie</a></li>
+					<li><a href="index.php">BeFit</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -45,18 +45,19 @@ function filterTable($query)
         <input type="submit" name="search" value="Szukaj"><br><br>
         <table>
             <tr>
-         <td>Nazwa</td>
-   <td>Kalorie</td>
-   <td>Białko</td>
-   <td>Tłuszcz</td>
-   <td>Węglowodany</td>
+         <td></td>
+   <td> </td>
+   <td> </td>
+   <td> </td>
+   <td> </td>
             </tr>
             <?php while($row = mysqli_fetch_array($search_result)):?>
                 <tr>
-                <td><?php echo $row['Nazwa'];?></th>
-                    <th><?php echo $row['bialko'];?></th>
-                    <th><?php echo $row['tluszcz'];?></th>
-                    <th><?php echo $row['weglowodany'];?></th>
+                <td><?php echo $row['Nazwa'];?></th> 
+                <th><?php echo $row['kalorie'];?></th>  
+                    <th><?php echo $row['bialko'];?></th> 
+                    <th><?php echo $row['tluszcz'];?></th> 
+                    <th><?php echo $row['weglowodany'];?></th> 
                 </tr>
             <?php endwhile;?>
         </table>

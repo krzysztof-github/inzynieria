@@ -1,15 +1,4 @@
-  <?php
-
-	session_start();
-	
-	if(!isset($_SESSION['zalogowany']))
-	{
-		header('Location: logowanie.php');
-		exit();
-	}
-	
-?>
- <!doctype html>
+<!doctype html>
 <html>
 
 <head>
@@ -24,7 +13,6 @@
 		<header class="NAGLOWEK">
 			<nav id="MENU">
 				<ul>
-					<li><a href="logout.php">Wyloguj</a></li>
 					<li><a href="produkty.php">Produkty</a></li>
 					<li><a href="kalkulator.php">Kalkulator</a></li>
 					<li><a href="logowanie.php">Logowanie</a></li>

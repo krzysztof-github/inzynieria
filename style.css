@@ -12,6 +12,39 @@ body{
 	background: url("healt.jpg");
 	background-size: cover;	
 }
+	
+									/*format  strony tytulowej */
+articlee{
+	height: 50px;
+	float:right;
+	margin-right: 353px;
+	margin-top: 230px;
+}
+.text1
+{
+	font-size: 20px;
+}
+
+h4
+{
+	font-size: 50px;
+}
+
+.buttonn
+{
+	 border: none;
+	  font-size: 1.2rem;
+	  padding: 0 6vh;
+	  box-sizing: border-box;
+	  line-height: 2;
+	  margin-top: 3vh;
+	  margin-left: 10vh;
+	  outline: transparent;
+	  color: white;
+	  border-radius: 30px;
+	  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
 
 									/* format menu */
 ul {
@@ -41,7 +74,6 @@ box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
 li a:hover {
 color: black;
-background: gray;
 opacity: 0.3;
 border: 1px solid black;
 }

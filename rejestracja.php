@@ -74,10 +74,10 @@ session_start();
 		<header class="NAGLOWEK">
 			<nav id="MENU">
 				<ul>
-					<li><a href="produkty.html">Produkty</a></li>
-					<li><a href="kalkulator.html">Kalkulator</a></li>
-					<li><a href="logowanie.html">Logowanie</a></li>
-					<li><a href="przyklad.html">BeFit</a></li>
+					<li><a href="wyszukiwarka.php">Produkty</a></li>
+					<li><a href="kalkulator.php">Kalkulator</a></li>
+					<li><a href="logowanie.php">Logowanie</a></li>
+					<li><a href="index.php">BeFit</a></li>
 				</ul>
 			</nav>
 		</header>

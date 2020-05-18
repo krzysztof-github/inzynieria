@@ -1,8 +1,3 @@
-<?php
-
-	session_start();
-
-?>
 <!doctype html>
 <html>
 
@@ -19,11 +14,10 @@
 		<header class="NAGLOWEK">
 			<nav id="MENU">
 				<ul>
-					<li><a href="logout.php">Wyloguj</a></li>
-					<li><a href="produkty.php">Produkty</a></li>
+					<li><a href="wyszukiwarka.php">Produkty</a></li>
 					<li><a href="kalkulator.php">Kalkulator</a></li>
 					<li><a href="logowanie.php">Logowanie</a></li>
-					<li><a href="przyklad.php">BeFit</a></li>
+					<li><a href="index.php">BeFit</a></li>
 				</ul>
 			</nav>
 		</header>
