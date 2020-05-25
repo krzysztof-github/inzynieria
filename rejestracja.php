@@ -14,6 +14,8 @@ session_start();
 
 	if(isset($_POST["login"]))
 	{
+		
+		$wszystko_OK=true;
 		//Sprawdź poprawność loginu
 		$login = $_POST['login'];
 		
@@ -48,17 +50,24 @@ session_start();
 		
 		$conn = new mysqli("localhost","root","","uzytkownik");
 		
-		$odp = $conn->query("INSERT INTO dane(login, password, password2) VALUES ('$login', '$password', '$password2')");
-		
-		if($odp)
+		if($wszystko_OK==true)
 		{
-			echo "Dodano użytkownika!";
+			$odp = $conn->query("INSERT INTO dane(login, password, password2) VALUES ('$login', '$password', '$password2')");
+			
+			if($odp)
+			{
+				echo "Dodano użytkownika!";
+			}
+			else
+			{
+				echo "Błąd";
+			}
 		}
 		else
 		{
-			echo "Błąd";
+			
 		}
-		
+			
 
 		$conn->close();
 		
@@ -87,9 +96,9 @@ session_start();
 			<div class="login-box2">
 				<h2>Rejestracja</h2>
 				<div id="error"></div>
-				<form method="POST" action="zap.php">
+				<form method="POST" action="rejestracja.php">
 				
-				<form action="#" class="form1">
+				<form action="rejestracja.php" class="form1">
 					<div class="form--input-box">
 						<label for="login">Podaj login:</label>
 						<input type="text" name="login" id="login">
