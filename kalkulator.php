@@ -10,6 +10,11 @@
 </head>
 
 <body>
+<?php
+$con = mysqli_connect('localhost','root','','uzytkownik') or die('Unable To connect');
+session_start();
+if($_SESSION['zalogowany']==0){echo "nie masz dostępu do tej części witryny. <a href='logowanie.php'>Zaloguj się</a> exit()";}
+?>
 	<div id="top">
 		<header class="NAGLOWEK">
 			<nav id="MENU">

@@ -3,10 +3,17 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
 	<title>BeFit</title>
 	<link rel="stylesheet" href="style.css">
 
 </head>
+
+<?php
+
+$conn = new mysqli("localhost","root","","uzytkownik");
+
+?>
 
 <body>
 	<div id="top">

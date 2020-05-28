@@ -7,6 +7,8 @@ const span = document.createElement("span");
 const ul = document.querySelector(".errorList")
 
 
+
+
 form.addEventListener('submit', (e) => {
 
   e.preventDefault();
@@ -43,6 +45,7 @@ form.addEventListener('submit', (e) => {
   if (password.value !== password2.value) {
     messages.push('Hasła muszą być identyczne')
   }
+
 
   ul.innerHTML = `${messages.map(el => `<li>${el}</li>`).join("")}`
 

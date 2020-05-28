@@ -42,7 +42,7 @@
 				unset($_SESSION['blad']);
 				$rezultat->free_result();
 				
-				header('Location: kalkulator.php');
+				header('Location: paneluzytkownika.php');
 			}
 			else
 			{

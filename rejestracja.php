@@ -8,9 +8,66 @@
 	
 </head>
 
-<?php
 
-session_start();
+
+<body>
+	<div id="top">
+		<header class="NAGLOWEK">
+			<nav id="MENU">
+				<ul>
+					<li><a href="wyszukiwarka.php">Produkty</a></li>
+					<li><a href="kalkulator.php">Kalkulator</a></li>
+					<li><a href="logowanie.php">Logowanie</a></li>
+					<li><a href="index.php">BeFit</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<article>
+			<div class="login-box">
+				<h2>Rejestracja</h2>
+				<div id="error"></div>
+				<form action="rejestracja.php" method="post" >
+				<div class="form1">
+					<div class="form--input-box">
+						<label for="login">Podaj login:</label>
+						<input type="text" name="login" id="login" class="pass1" required>
+						<?php
+					
+						if(isset($_SESSION['e_login']))
+						{
+						echo '<div class="error">'.$_SESSION['e_login'].'</div>';
+						unset($_SESSION['e_login']);
+						}
+						
+						?>
+					</div>
+
+					<div class="form--input-box">
+						<label for="password">Podaj hasło:</label>
+						<input type="password" name="password" id="password" class="pass2" required>
+						<?php
+						
+						if(isset($_SESSION['e_haslo']))
+						{
+						echo '<div class="error">'.$_SESSION['e_haslo'].'</div>';
+						unset($_SESSION['e_haslo']);
+						}
+						
+						?>
+					</div>
+					<div class="form--input-box">
+						<label for="password">Powtórz hasło:</label>
+						<input type="password"  name="password2" id="password2" required> 
+					</div>
+					<button type="submit" class="button">Zarejestruj się</button>
+					<ul class="errorList"></ul>
+					</div>
+					</form>
+
+		<?php
+
+			session_start();
 
 	if(isset($_POST["login"]))
 	{
@@ -74,73 +131,13 @@ session_start();
 
 	}
 
-
 ?>
-
-
-<body>
-	<div id="top">
-		<header class="NAGLOWEK">
-			<nav id="MENU">
-				<ul>
-					<li><a href="wyszukiwarka.php">Produkty</a></li>
-					<li><a href="kalkulator.php">Kalkulator</a></li>
-					<li><a href="logowanie.php">Logowanie</a></li>
-					<li><a href="index.php">BeFit</a></li>
-				</ul>
-			</nav>
-		</header>
-
-		<article>
-			<br>
-			<div class="login-box2">
-				<h2>Rejestracja</h2>
-				<div id="error"></div>
-				<form method="POST" action="rejestracja.php">
-				
-				<form action="rejestracja.php" class="form1">
-					<div class="form--input-box">
-						<label for="login">Podaj login:</label>
-						<input type="text" name="login" id="login">
-						<?php
-						
-						if(isset($_SESSION['e_login']))
-						{
-						echo '<div class="error">'.$_SESSION['e_login'].'</div>';
-						unset($_SESSION['e_login']);
-						}
-						
-						?>
-					</div>
-					<div class="form--input-box">
-						<label for="password">Podaj hasło:</label>
-						<input type="password" name="password" id="password">
-						<?php
-						
-						if(isset($_SESSION['e_haslo']))
-						{
-						echo '<div class="error">'.$_SESSION['e_haslo'].'</div>';
-						unset($_SESSION['e_haslo']);
-						}
-						
-						?>
-					</div>
-					<div class="form--input-box">
-						<label for="password">Powtórz hasło:</label>
-						<input type="password" name="password2" id="password2">
-					</div>
-					<button type="submit" class="button">Zarejestruj się</button>
-					<ul class="errorList"></ul>
-				</form>
-				
-				</form>
-
 			</div>
 			
 		</article>
 		<footer id="STOPKA"></footer>
 	</div>
-<script class="error" defer src="rejestracja_walidacja.js" ></script> 
+
 </body>
 
 </html>
