@@ -41,16 +41,17 @@ function filterTable($query)
 		</header>
 		<article>
     <form action="wyszukiwarka.php" method="post"> 
-        <input type="text" name="valueToSearch" placeholder="Szukaj produktow"><br><br>
+        <input type="text" name="valueToSearch" placeholder="Wpisz nazwę">
         <input type="submit" name="search" value="Szukaj"><br><br>
         <table>
             <tr>
-         <td></td>
-   <td> </td>
-   <td> </td>
-   <td> </td>
-   <td> </td>
+         <td>Nazwa</td>
+   <td>kalorie</td>
+   <td>białko</td>
+   <td>tłuszcz</td>
+   <td>węglowodany</td>
             </tr>
+
             <?php while($row = mysqli_fetch_array($search_result)):?>
                 <tr>
                 <td><?php echo $row['Nazwa'];?></th> 
@@ -60,6 +61,7 @@ function filterTable($query)
                     <th><?php echo $row['weglowodany'];?></th> 
                 </tr>
             <?php endwhile;?>
+            
         </table>
     </form>
 

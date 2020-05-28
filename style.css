@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 *{
 	font-family: 'Poppins', sans-serif;
@@ -14,6 +13,8 @@ body{
 }
 	
 									/*format  strony tytulowej */
+
+					
 articlee{
 	height: 50px;
 	float:right;
@@ -23,6 +24,7 @@ articlee{
 .text1
 {
 	font-size: 20px;
+	font-weight: normal;
 }
 
 h4
@@ -61,7 +63,6 @@ text-align: center;
 font-size: 1.2em;
 width: 140px;
 text-decoration: none;
-color: black;
 background-color: white;
 padding: 10px 15px;
 margin: 0px 50px 50px 0px;
@@ -74,7 +75,7 @@ box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
 li a:hover {
 color: black;
-opacity: 0.3;
+opacity: 0.5;
 border: 1px solid black;
 }
 
@@ -128,6 +129,7 @@ form button:hover{
 .format
 {
 	position:relative; left:7px;
+	line-height: 60px;
 }
 
 .format1
@@ -159,6 +161,8 @@ form button:hover{
 .los
 {
 		outline-color: orangered;
+		
+
 }
 
 									/* format podstrony logowanie */
@@ -170,6 +174,7 @@ form button:hover{
 	transform: translate(-50%, -50%);
 	background-color: white;
 	width: 500px;
+	height: 600px;
 	text-align: center;
 	box-sizing: border-box;
 	padding: 11vh 5vh 7vh;
@@ -196,6 +201,7 @@ p {
 	position: relative;
 	text-align: left;
 	margin: 0 0 3vh;
+	margin-left: 50px;
 }
 
 
@@ -208,6 +214,11 @@ p {
 	outline: transparent;
 	margin-top: 2vh;
 
+}
+
+.pass
+{
+	margin-left: 17px;
 }
 
 .form1 .form--input-box label {
@@ -234,6 +245,7 @@ p {
 	grid-template-columns: 1fr 1.5fr;
 	font-size: 0.8rem;
 	text-align: left;
+	margin-left: 30px;
 }
 
 .form1 .form--options > div:last-of-type {
@@ -248,7 +260,7 @@ a {
 	-webkit-background-clip: text;
   }
 
-  .button{
+.button{
 	  border: none;
 	  font-size: 1.2rem;
 	  padding: 0 6vh;
@@ -262,6 +274,25 @@ a {
 	  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
+.logg 							/*  odzyskiwanie hasla */
+{
+	margin-left: -20px;
+}
+
+.button2{
+	border: none;
+	font-size: 1.2rem;
+	padding: 0.3vh 4vh;
+	box-sizing: border-box;
+	margin-top: 3vh;
+	outline: transparent;
+	color: white;
+	background-image: linear-gradient(to right, #FFC371 0%, #FF5F6D 99%, #FF5F6D 100%);
+	border-radius: 30px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+
 				 			 /*Format pól rejestracji */
 				  
 .login-box2 
@@ -274,7 +305,7 @@ background-color: white;
 width: 500px;
 text-align: center;
 box-sizing: border-box;
-padding: 20px 40px 15px;
+padding: 10vh 4vh 6vh;
 border-radius: 10px;
 box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
@@ -287,3 +318,34 @@ box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 	  text-align: left;
   }
 
+.pass1
+{
+	margin-left: 31px;
+}
+
+.pass2
+{
+	margin-left: 28px;
+}
+
+							/*format podstrony produkty */
+
+input[type=submit] {
+	background-image: linear-gradient(to right, #FFC371 0%, #FF5F6D 99%, #FF5F6D 100%);
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	margin-left: 10px;
+	cursor: pointer;
+	border: none;
+	font-size: 1rem;
+	box-sizing: border-box;
+	outline: transparent;
+	color: white;
+	border-radius: 60px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+							

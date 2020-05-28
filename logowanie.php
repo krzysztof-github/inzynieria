@@ -26,10 +26,10 @@
 			<div class="login-box">
 				<h2>Witamy</h2>
 				<p>Zaloguj się do swojego konta</p>
-				<form action="zaloguj.php" method="post">
-				<form action="#" class="form1">
+				<form action="zaloguj.php" method="post" class="form1">
+			
 					<div class="form--input-box">
-						<label for="login">E-mail:</label>
+						<label for="login">Login:</label>
 						<input type="text" name="login" id="login" required>
 					</div>
 					<div class="form--input-box">
@@ -39,14 +39,13 @@
 
 					<div class="form--options">  
 						<div>
-							<a href="haslo.php">Zapomniałeś hasła?</a>
+							<a href="newpassword.php">Zapomniałeś hasła?</a>
 						</div>
 						<div>
 							Nie masz konta? <a href="rejestracja.php" target="_self">Zarejestruj się</a>
 						</div>
 					</div>
 					<button type="submit" class="button">Zaloguj się</button>
-				</form>
 				</form>
 				<?php
 					if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
