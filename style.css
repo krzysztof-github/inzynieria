@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
 *{
@@ -287,6 +287,8 @@ box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 	  text-align: left;
   }
 
+  							/*panel uzytkownika */
+
   .card-container{
 	width: 500px;
 	height: 630px;
@@ -334,3 +336,12 @@ box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 	opacity: .6;
 	font-weight: bold;
 }
+
+.liar 
+{
+	padding-top: 50px;
+	float: right;
+	width: 100%;
+	list-style: none;
+}
+

@@ -17,7 +17,7 @@
 					<li><a href="logout.php">Wyloguj</a></li>
 					<li><a href="wyszukiwarka.php">Produkty</a></li>
 					<li><a href="kalkulator.php">Kalkulator</a></li>
-					<li><a href="paneluzytkownika.php">Profil</a></li>
+					<li><a href="paneluzytkownika.php">Konto</a></li>
 					<li><a href="index.php">BeFit</a></li>
 				</ul>
 			</nav>
@@ -34,22 +34,25 @@
 		</div>
 
 		<div class="lower-container">
-			<div>
-				<h3>
-				<?php
-				session_start();
-				$con = mysqli_connect('localhost','root','','uzytkownik') or die('Unable To connect');
-				if (isset($_SESSION['login'])) {
+				<div>
+					<h3>
+					<?php
+					session_start();
+					$con = mysqli_connect('localhost','root','','uzytkownik') or die('Unable To connect');
+					if (isset($_SESSION['login'])) {
 					echo $_SESSION['login'];
-				}
-				?>
-				</h3>
-				<h4>
-				Ilosc kalorii: 
-				</h4>
+					}
+					?>
+					</h3>
+					<h4>
+					Ilość kalorii: 
+					</h4>
+					</div>
 			</div>
-		</div>
-
+			<ul class="liar">
+			<li><a href="formularz_zmiany_hasla.php">Coś </a></li>
+			<li><a href="formularz_zmiany_hasla.php">Zmień hasło</a></li>
+			</ul>
 		</div>
 		</articlee>
 
