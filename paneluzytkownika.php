@@ -50,7 +50,7 @@
 					</div>
 			</div>
 			<ul class="liar">
-			<li><a href="formularz_zmiany_hasla.php">Coś </a></li>
+			<li><a href="produkty.php">Lista produktów </a></li>
 			<li><a href="formularz_zmiany_hasla.php">Zmień hasło</a></li>
 			</ul>
 		</div>
