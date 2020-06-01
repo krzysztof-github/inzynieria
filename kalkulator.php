@@ -1,5 +1,7 @@
-
- <!doctype html>
+<?php
+	session_start();
+?>
+<!doctype html>
 <html>
 
 <head>
@@ -10,26 +12,27 @@
 </head>
 
 <body>
-<?php
-$con = mysqli_connect('localhost','root','','uzytkownik') or die('Unable To connect');
-session_start();
-if($_SESSION['zalogowany']==0){echo "nie masz dostępu do tej części witryny. <a href='logowanie.php'>Zaloguj się</a> exit()";}
-?>
+
+
 	<div id="top">
 		<header class="NAGLOWEK">
 			<nav id="MENU">
 				<ul>
 				<li>
-					<li><a href="wyszukiwarka.php">Produkty</a></li>
+					<li><a href="logout.php">Wyloguj</a></li>
+					<li><a href="wysz_uzyt.php">Produkty</a></li>
 					<li><a href="kalkulator.php">Kalkulator</a></li>
-					<li><a href="logowanie.php">Logowanie</a></li>
-					<li><a href="index.php">BeFit</a></li>
+					<li><a href="paneluzytkownika.php">Konto</a></li>
 				</ul>
 			</nav>
 		</header>
 		</div>
 
 		<article>
+		<?php
+		if($_SESSION["login"]) {
+			echo 'Jesteś zalogowany jako &nbsp';
+		echo $_SESSION["login"] ; ?>
 			<form class="form">
 				<div class="login-box1">
 				<label for="weight"> <span class="format2"> Podaj swoją wage: </label> </span> <input class="los" type="number" > kg</br> 
@@ -49,12 +52,19 @@ if($_SESSION['zalogowany']==0){echo "nie masz dostępu do tej części witryny. 
 					<option value="huge">Ciężka praca fizyczna, codzienny trening</option>
 				</select></br> <br>
 				<button>Oblicz moje zapotrzebowanie! <i class="fas fa-arrow-circle-right"></i></button> <br>
+				<?php
+		}else 
+		{
+			header('Location: logowanie.php');
+		};
+?>
 			</form>
 			<p class="result"></p>
 		</article>
 		<footer id="STOPKA"></footer>
 	</div>
 	<script src="calculator.js"></script>
+
 </body>
 
 </html>
