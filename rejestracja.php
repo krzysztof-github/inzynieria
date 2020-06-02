@@ -1,3 +1,104 @@
+<?php
+
+			session_start();
+
+	if(isset($_POST["login"]))
+	{
+		
+		$wszystko_OK=true;
+		//Sprawdź poprawność loginu
+		$login = $_POST['login'];
+		
+		//Sprawdzenie długości loginu
+		if ((strlen($login)<3) || (strlen($login)>20))
+		{
+			$wszystko_OK=false;
+			$_SESSION['e_login']="Nick musi posiadać od 3 do 20 znaków!";
+		}
+		
+		if (ctype_alnum($login)==false)
+		{
+			$wszystko_OK=false;
+			$_SESSION['e_login']="Nick może składać się tylko z liter i cyfr (bez polskich znaków)";
+		}
+		
+		
+		$password = $_POST['password'];
+		$password2 = $_POST['password2'];
+		
+		if((strlen($password)<8) || (strlen($password)>20))
+		{
+			$wszystko_OK=false;
+			$_SESSION['e_haslo'] = "Hasło musi posiadać od 8 do 20 znaków!";
+		}
+		
+		if($password!=$password2)
+		{
+			$wszystko_OK=false;
+			$_SESSION['e_haslo'] = "Hasła różnią się!";
+		}
+		
+		
+		require_once "connect.php";
+		mysqli_report(MYSQLI_REPORT_STRICT);
+		
+		try 
+		{
+			$conn = new mysqli($host, $db_login, $db_password, $db_name);
+			if ($conn->connect_errno!=0)
+			{
+				throw new Exception(mysqli_connect_errno());
+			}
+			else
+			{
+				$rezultat = $conn->query("SELECT id from dane WHERE login='$login'");
+				
+				if(!$rezultat) throw new Exception($conn->error);
+				
+				$ile_takich_loginow = $rezultat->num_rows;
+				if($ile_takich_loginow>0)
+				{
+					$wszystko_OK = false;
+				$_SESSION['e_login'] = "Istnieje już konto o takim loginie!";
+				}
+			}
+		}
+		catch(Exception $e)
+		{
+			echo '<span style="color:red;">Błąd serwera! Przepraszamy za niedogodności i prosimy o rejestrację w innym terminie!</span>';
+			echo '<br />Informacja developerska: '.$e;
+		}
+		
+		$conn = new mysqli("localhost","root","","uzytkownik");
+		
+		if($wszystko_OK==true)
+		{
+			$odp = $conn->query("INSERT INTO dane(login, password, password2) VALUES ('$login', '$password', '$password2')");
+			
+			if($odp)
+			{
+				echo "Dodano użytkownika!";
+			}
+			else
+			{
+				echo "Błąd";
+			}
+		}
+		else
+		{
+			
+		}
+			
+
+		$conn->close();
+		
+
+	}
+
+?>
+
+
+
 <!doctype html>
 <html>
 
@@ -65,73 +166,6 @@
 					</div>
 					</form>
 
-		<?php
-
-			session_start();
-
-	if(isset($_POST["login"]))
-	{
-		
-		$wszystko_OK=true;
-		//Sprawdź poprawność loginu
-		$login = $_POST['login'];
-		
-		//Sprawdzenie długości loginu
-		if ((strlen($login)<3) || (strlen($login)>20))
-		{
-			$wszystko_OK=false;
-			$_SESSION['e_login']="Nick musi posiadać od 3 do 20 znaków!";
-		}
-		
-		if (ctype_alnum($login)==false)
-		{
-			$wszystko_OK=false;
-			$_SESSION['e_login']="Nick może składać się tylko z liter i cyfr (bez polskich znaków)";
-		}
-		
-		
-		$password = $_POST['password'];
-		$password2 = $_POST['password2'];
-		
-		if((strlen($password)<8) || (strlen($password)>20))
-		{
-			$wszystko_OK=false;
-			$_SESSION['e_haslo'] = "Hasło musi posiadać od 8 do 20 znaków!";
-		}
-		
-		if($password!=$password2)
-		{
-			$wszystko_OK=false;
-			$_SESSION['e_haslo'] = "Hasła różnią się!";
-		}
-		
-		$conn = new mysqli("localhost","root","","uzytkownik");
-		
-		if($wszystko_OK==true)
-		{
-			$odp = $conn->query("INSERT INTO dane(login, password, password2) VALUES ('$login', '$password', '$password2')");
-			
-			if($odp)
-			{
-				echo "Dodano użytkownika!";
-			}
-			else
-			{
-				echo "Błąd";
-			}
-		}
-		else
-		{
-			
-		}
-			
-
-		$conn->close();
-		
-
-	}
-
-?>
 			</div>
 			
 		</article>
