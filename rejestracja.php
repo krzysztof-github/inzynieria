@@ -133,6 +133,19 @@
 					<div class="form--input-box">
 						<label for="login">Podaj login:</label>
 						<input type="text" name="login" id="login" class="pass1" required>
+
+					</div>
+
+					<div class="form--input-box">
+						<label for="password">Podaj hasło:</label>
+						<input type="password" name="password" id="password" class="pass2" required>
+
+					</div>
+					<div class="form--input-box">
+						<label for="password">Powtórz hasło:</label>
+						<input type="password"  name="password2" id="password2" required> 
+					</div>
+					<button type="submit" class="button">Zarejestruj się</button>
 						<?php
 					
 						if(isset($_SESSION['e_login']))
@@ -142,11 +155,6 @@
 						}
 						
 						?>
-					</div>
-
-					<div class="form--input-box">
-						<label for="password">Podaj hasło:</label>
-						<input type="password" name="password" id="password" class="pass2" required>
 						<?php
 						
 						if(isset($_SESSION['e_haslo']))
@@ -156,12 +164,6 @@
 						}
 						
 						?>
-					</div>
-					<div class="form--input-box">
-						<label for="password">Powtórz hasło:</label>
-						<input type="password"  name="password2" id="password2" required> 
-					</div>
-					<button type="submit" class="button">Zarejestruj się</button>
 					<ul class="errorList"></ul>
 					</div>
 					</form>
