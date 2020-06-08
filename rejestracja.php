@@ -77,7 +77,8 @@
 			
 			if($odp)
 			{
-				echo "Dodano użytkownika!";
+				$_SESSION['e_udane']="Dodano użytkownika!";
+
 			}
 			else
 			{
@@ -161,6 +162,15 @@
 						{
 						echo '<div class="error">'.$_SESSION['e_haslo'].'</div>';
 						unset($_SESSION['e_haslo']);
+						}
+						
+						?>
+						<?php
+						
+						if(isset($_SESSION['e_udane']))
+						{
+						echo '<div class="error">'.$_SESSION['e_udane'].'</div>';
+						unset($_SESSION['e_udane']);
 						}
 						
 						?>
