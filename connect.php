@@ -5,4 +5,6 @@
 	$db_password = "";
 	$db_name = "uzytkownik";
 
+	$conn = new mysqli($host, $db_login, $db_password, $db_name);
+
 ?>

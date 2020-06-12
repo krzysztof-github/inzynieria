@@ -31,7 +31,8 @@ CREATE TABLE `dane` (
   `id` int(11) NOT NULL,
   `login` text COLLATE utf8_polish_ci NOT NULL,
   `password` text COLLATE utf8_polish_ci NOT NULL,
-  `password2` text COLLATE utf8_polish_ci NOT NULL
+  `password2` text COLLATE utf8_polish_ci NOT NULL,
+  `CALC` text COLLATE utf8_polish_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --

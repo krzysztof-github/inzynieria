@@ -9,6 +9,7 @@
 	<title>Przykładowy tytuł</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="https://kit.fontawesome.com/fa7a4264a9.js" crossorigin="anonymous"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -29,11 +30,15 @@
 		</div>
 
 		<article>
+		
 		<?php
 		if($_SESSION["login"]) {
 			echo 'Jesteś zalogowany jako &nbsp';
 		echo $_SESSION["login"] ; ?>
-			<form class="form">
+		
+		
+			<form class="form" >
+			
 				<div class="login-box1">
 				<label for="weight"> <span class="format2"> Podaj swoją wage: </label> </span> <input class="los" type="number" > kg</br> 
 				<label for="height">Podaj swój wzrost:  </label> <span class="format"> <input class="los" type="number"> cm</br></span> 
@@ -51,13 +56,18 @@
 					<option value="very high">Praca fizyczna, trening 5 razy w tygodniu</option>
 					<option value="huge">Ciężka praca fizyczna, codzienny trening</option>
 				</select></br> <br>
-				<button>Oblicz moje zapotrzebowanie! <i class="fas fa-arrow-circle-right"></i></button> <br>
+				
+				<button> Oblicz moje zapotrzebowanie! <i class="fas fa-arrow-circle-right"></i></button> <br>
+				<input type="hidden" name="login_user" value="<?php echo $_SESSION['login'];?>" id="login_user"/>
+			
+				
+				
 				<?php
 		}else 
 		{
 			header('Location: logowanie.php');
 		};
-?>
+?>				
 			</form>
 			<p class="result"></p>
 		</article>
