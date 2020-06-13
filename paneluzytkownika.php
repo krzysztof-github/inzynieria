@@ -45,7 +45,19 @@
 					echo $_SESSION["login"]; ?>
 					</h3>
 					<h5>
-					Ilość kalorii: 
+					<?php
+					 $connect = mysqli_connect('localhost','root','');
+					 mysqli_select_db($connect, 'uzytkownik');
+
+					 $result = mysqli_query($connect,"SELECT * FROM dane WHERE login='" . $_SESSION["login"] . "'");
+
+					 echo 'Ilosc kalorii: ';
+					 while($row = mysqli_fetch_array($result))
+					 {
+						echo  "{$row['data']}";
+					 }
+					
+					?>
 					</h5>
 					
 					</div>
@@ -56,6 +68,7 @@
 			</ul>
 		</div>
 		</articlee>
+
 
 	
 		<footer id="STOPKA"></footer>
