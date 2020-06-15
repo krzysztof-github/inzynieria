@@ -5,7 +5,5 @@
     $db_password = "";
     $db_name = "uzytkownik";
       
-    $link = mysqli_connect($host, $db_user, $db_password, $db_name);
-     
-  
+    $connect = mysqli_connect($host, $db_user, $db_password, $db_name);
 ?>

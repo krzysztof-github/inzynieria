@@ -37,7 +37,8 @@
 				$wiersz = $rezultat->fetch_assoc();
 				$_SESSION['id'] = $wiersz['id'];
 				$_SESSION['login'] = $wiersz['login'];
-				
+				$_SESSION['zapotrzebowanie'] = $wiersz['zapotrzebowanie'];
+				$_SESSION['zjedzone_kcal'] = $wiersz['zjedzone_kcal'];
 
 				unset($_SESSION['blad']);
 				$rezultat->free_result();
